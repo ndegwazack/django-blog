@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Zed Blog {% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/me.jpg' %}" alt="Zack - Zed Thoughts">
+        <h2>Zack's Experiences</h2>
+    </header>
+    <p>Hi, I'm Zack and these are my thoughts and Experiences</p>
+</section>
+
+<section id="latest-posts">
+    <h2>New Thoughts</h2>
+    <ul>
+        {% for post in posts %}
+            {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>I build web applications to help solve business needs - I would love to help you build your online business.</p>
+    <p>I love listening to music, travelling and hanging out with friends.</p>
+</section>
+{% endblock %}

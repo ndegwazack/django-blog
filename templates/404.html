@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}404 Page{% endblock %}
+
+{% block content %}
+    <h1>Page Not Found</h1>
+    <p>
+        Go <a href="{% url 'index' %}">back to homepage.</a>
+    </p>
+{% endblock %}
